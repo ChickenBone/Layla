@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Hey Layla!</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <div class="container text-center justify-content-center mt-5 mb-5">
+        <div class="row">
+            <div class="col box box1 text-center">
+                <h3 class="">
+                    Add To List
+                </h3>
+                <form id="add" action="/add" method="post">
+                    <textarea rows="4" cols="50" name="text" placeholder="Input Your Text Here" style="
+                    background: #2C2F33; border: none; padding: 5px; color: #fff; border-radius: 10px; margin: 10px;"></textarea> 
+                    <br>
+                    <button value="Submit" type="submit" style="
+                    background: #2C2F33; border: none; padding: 5px; color: #fff; border-radius: 10px; margin: 10px;">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const serialize_form = form => JSON.stringify(
+            Array.from(new FormData(form).entries())
+            .reduce((m, [key, value]) => Object.assign(m, {
+                [key]: value
+            }), {})
+        );
+
+        $('#add').on('submit', function (event) {
+            event.preventDefault();
+            const json = serialize_form(this);
+            console.log(json);
+            $.ajax({
+                type: 'POST',
+                url: '/add',
+                dataType: 'json',
+                data: json,
+                contentType: 'application/json',
+                success: function (data) {
+                    alert(data)
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
