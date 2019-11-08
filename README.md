@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+Welcome to Glitch
+=================
 
-You can use the [editor on GitHub](https://github.com/ChickenBone/Layla/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
 
-### Markdown
+Find out more [about Glitch](https://glitch.com/about).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+Your Project
+------------
 
-# Header 1
-## Header 2
-### Header 3
+On the front-end,
+- edit `public/client.js`, `public/style.css` and `views/index.html`
+- drag in `assets`, like images or music, to add them to your project
 
-- Bulleted
-- List
+On the back-end,
+- your app starts at `server.js`
+- add frameworks and packages in `package.json`
+- safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+Made by [Glitch](https://glitch.com/)
+-------------------
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ChickenBone/Layla/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+\ ゜o゜)ノ

@@ -1,0 +1,40 @@
+body {
+  background: #2C2F33;
+  color: #fff;
+    
+}
+
+.box {
+  min-height: 40vh;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 60vw;
+  border-radius: 30px;  
+  padding: 40px;
+  text-align: left;
+
+}
+
+.box1{
+  background: rgb(5,92,176);
+  background: linear-gradient(90deg, rgba(5,92,176,1) 24%, rgba(5,92,176,1) 49%, rgba(3,143,210,1) 79%, rgba(0,212,255,1) 98%);
+}
+
+.box2 {
+    background: rgb(210,3,3);
+background: linear-gradient(90deg, rgba(210,3,3,1) 25%, rgba(232,2,113,1) 47%, rgba(255,0,226,1) 98%);
+}
+
+.box3{
+  background: rgb(24,232,2);
+background: linear-gradient(90deg, rgba(24,232,2,1) 11%, rgba(10,219,147,1) 37%, rgba(0,209,255,1) 98%);
+}
+.box4{
+  background: rgb(219,103,10);
+background: linear-gradient(90deg, rgba(219,103,10,1) 27%, rgba(255,190,0,1) 98%);
+}
+.box5{
+  background: rgb(219,10,10);
+background: linear-gradient(90deg, rgba(219,10,10,1) 9%, rgba(247,80,2,1) 53%, rgba(255,100,0,1) 90%);
+}
