@@ -93,6 +93,16 @@ $.getJSON("/data.json", function (json) {
   place.innerHTML = genoratedHTML;
   var seen = []
   var sent = []
+  if(id){
+    $.ajax({
+      type: 'POST',
+      url: `/view/add/shared/${id}`,
+      contentType: 'application/json',
+      success: function () {
+        console.log("success")
+      }
+    })
+  }
   window.onscroll = function (e) {
     reasons.forEach((reason) => {
       if (Utils.isElementInView($(`#${reason.id}`), false) && seen.indexOf(reason.id) < 0) {

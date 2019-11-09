@@ -1,6 +1,30 @@
 const express = require("express");
 const app = express();
-const fs = require("fs");
+const fs = require('fs');
+const https = require('https');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/layla.mintdev.co/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/layla.mintdev.co/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/layla.mintdev.co/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
+const httpsServer = https.createServer(credentials, app);
+
+var axios = require('axios')
+
+async function main() {
+  var dataf = await axios.get('https://laylab.glitch.me/data.json')
+  console.log("downloaded")
+  await fs.writeFileSync('./public/data.json', JSON.stringify(dataf.data))
+  console.log("written")
+  console.log("done imported " + dataf.data.items.length + " items")
+}
+main()
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -71,6 +95,9 @@ const listener = app.listen(80, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
+httpsServer.listen(443, () => {
+	console.log('HTTPS Server running on port 443');
+});
 function makeid(length) {
   var result = '';
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -80,3 +107,5 @@ function makeid(length) {
   }
   return result;
 }
+
+
