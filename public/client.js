@@ -55,6 +55,7 @@ $.getJSON("/data.json", function (json) {
           <h5>
             ${reasons[i].text.toLowerCase()}
           </h5>
+          ${window.location.href.split("/")[window.location.href.split("/").length - 1] == "add" ? `${reasons[i].views} Views, ${reasons[i].shared} Shared` : ""}
         </div>
       </div>`;
         }
@@ -71,6 +72,7 @@ $.getJSON("/data.json", function (json) {
         <h5>
           ${reasons[i].text.toLowerCase()}
         </h5>
+        ${window.location.href.split("/")[window.location.href.split("/").length - 1] == "add" ? `${reasons[i].views} Views, ${reasons[i].shared} Shared` : ""}
       </div>
     </div>`;
       }
