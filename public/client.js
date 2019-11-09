@@ -114,7 +114,7 @@ $.getJSON("/data.json", function (json) {
     })
     console.log(seen)
     seen.forEach((item) => {
-      if (sent.indexOf(item) < 0 && window.location.href.split("/")[window.location.href.split("/").length - 1] != "add" ) {
+      if (sent.indexOf(item) < 0 ) {
         $.ajax({
           type: 'POST',
           url: `/view/add/${id ? 'shared' : 'views'}/${item}`,
