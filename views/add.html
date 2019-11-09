@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
 
     <title>Hey Layla!</title>
 </head>
@@ -26,7 +26,7 @@
                 <h3 class="">
                     Add To List
                 </h3>
-                <form id="add" action="/add" method="post">
+                <form id="add" action="/wyatt/add" method="post">
                     <textarea rows="4" cols="20" name="text" placeholder="Input Your Text Here" style="
                     background: #2C2F33; border: none; padding: 5px; color: #fff; border-radius: 10px; margin: 10px;"></textarea> 
                     <br>
@@ -51,7 +51,7 @@
             console.log(json);
             $.ajax({
                 type: 'POST',
-                url: '/add',
+                url: '/wyatt/add',
                 dataType: 'json',
                 data: json,
                 contentType: 'application/json',
